@@ -168,16 +168,33 @@
       margin: 36px 0 32px;
     }
 
+    .field { min-width: 0; }
+
     .field input[type="date"] {
       padding-left: 14px;
       color-scheme: dark;
       font-family: inherit;
+      -webkit-appearance: none;
+      appearance: none;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .field input[type="date"]::-webkit-date-and-time-value {
+      text-align: left;
+      margin: 0;
+    }
+
+    .field input[type="date"]::-webkit-calendar-picker-indicator {
+      margin-left: auto;
+      flex-shrink: 0;
     }
 
     @media (max-width: 480px) {
       .card { padding: 24px; }
       .percent { font-size: 2rem; }
       .inputs { grid-template-columns: 1fr; gap: 14px; }
+      .field input { font-size: 1rem; }
     }
   </style>
 </head>
